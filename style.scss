@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  color: grey;
+  font-size: 2rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$search: rgb(74, 68, 131);
+
+header {
+  display: flex;
+  @include flex(column, center, center);
+  min-height: 30vh;
+}
+
+header h2 {
+  padding: 2rem;
+}
+
+#logo {
+  text-decoration: none;
+  color: $search;
+  font-size: 4rem;
+}
+
+.logo-n {
+  background: $search;
+  color: white;
+}
+
+.search-form {
+  padding: 2rem;
+  @include flex(row, center, center);
+}
+
+.search-form input {
+  font-size: 2rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border: 2px solid $search;
+  border-radius: 3px 0 0 3px;
+}
+.submit-btn {
+  background: $search;
+  width: 4rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border-radius: 0 3px 3px 0;
+  border: 2px solid $search;
+}
+
+.submit-btn svg {
+  fill: white;
+  pointer-events: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  width: 80%;
+  margin: auto;
+  gap: 5rem 3rem;
+}
+
+.photo-div {
+  @include flex(column, top, center);
+  height: 500px;
+}
+
+.gallery-info {
+  @include flex(row, space-between, center);
+  height: 10%;
+  width: 100%;
+}
+
+.photo-img {
+  height: 90%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.nav-button {
+  min-height: 30vh;
+  @include flex(row, center, center);
+}
+
+.more-btn {
+  border: none;
+  border-radius: 2px;
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  color: white;
+  background: $search;
+}
